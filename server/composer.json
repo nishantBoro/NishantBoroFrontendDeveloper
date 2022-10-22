@@ -1,0 +1,8 @@
+{
+    "name": "nishantboro/spacex",
+    "description": "Backend for spaceX",
+    "type": "project",
+    "require": {
+        "firebase/php-jwt": "^6.3"
+    }
+}
