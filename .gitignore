@@ -3,6 +3,8 @@ node_modules
 .cache
 .idea
 package-lock.json
+composer.phar
+vendor/
 
 #Compiled Code
 dist
