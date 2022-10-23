@@ -2,11 +2,11 @@ import React from 'react';
 
 import { wrapper } from '../redux/store';
 
-import { MainContainer } from '../modules';
+import { PageContainer } from '../modules';
 
 const HomePage = () => {
   return (
-    <MainContainer />
+    <PageContainer />
   );
 };
 

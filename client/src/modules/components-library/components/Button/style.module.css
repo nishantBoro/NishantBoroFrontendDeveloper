@@ -1,0 +1,15 @@
+.primary {
+  @apply text-blue-1 bg-white-1;
+}
+
+.size {
+  @apply text-14;
+
+  @media screen(desktop) {
+    font-size: 16px;
+  }
+}
+
+.secondary {
+  @apply text-white-1 bg-blue-1;
+}
