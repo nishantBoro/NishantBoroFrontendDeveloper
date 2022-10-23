@@ -8,3 +8,4 @@ vendor/
 
 #Compiled Code
 dist
+.next

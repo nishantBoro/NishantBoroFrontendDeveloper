@@ -13,6 +13,7 @@ function Main(props) {
   )
 }
 Main.propTypes = {
+  str: PropTypes.string
 };
 
 export default Main;
