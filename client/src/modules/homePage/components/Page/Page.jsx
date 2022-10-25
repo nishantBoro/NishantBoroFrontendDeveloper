@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { SearchBarContainer } from '../searchBar';
+import { SearchBarContainer } from '../SearchBar';
 
 function Page(props) {
   const {

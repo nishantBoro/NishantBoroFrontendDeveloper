@@ -9,10 +9,8 @@ function SearchBarContainer() {
 
   const dispatch = useDispatch();
 
-  const handleSearch = ({ query }) => {
-    dispatch(postSearch({
-      query
-    }));
+  const handleSearch = () => {
+    dispatch(postSearch());
   }
 
   return <SearchBar handleSearch={handleSearch} />;

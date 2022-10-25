@@ -11,7 +11,7 @@ function SearchBox(props) {
   } = props;
   
   return (
-    <div>
+    <div className=''>
       <input onChange={handleInputChange} placeholder={fieldPlaceholders[id]} value={fieldValue}/>
     </div>
   )

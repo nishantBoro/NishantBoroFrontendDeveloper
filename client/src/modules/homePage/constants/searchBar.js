@@ -10,4 +10,4 @@ export const fieldPlaceholders = {
   [fieldNames.status]: "Select Status",
 }
 
-export const SEARCH_API_URL = '/search';
+export const SEARCH_API_URL = '/api/search';

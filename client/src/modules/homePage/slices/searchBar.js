@@ -1,5 +1,7 @@
+import request from 'superagent';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fieldNames, SEARCH_API_URL } from '../constants/searchBar';
+import getAPIHost from '../../../utils/getAPIHost';
 
 const searchBar = createSlice({
   name: 'searchBar',
@@ -31,12 +33,19 @@ export const selectSearchBarFieldErrors = (state) => state.homePage.searchBar.fi
 
 export const postSearch = createAsyncThunk(
   'searchBar/postSearch',
-  async (payload) => {
-    const apiURL = SEARCH_API_URL;
+  async (payload, { dispatch, getState }) => {
+    const state = getState();
+
+    const fieldValues = selectSearchBarFieldValues(state) || {};
+    const API_URL = getAPIHost() + SEARCH_API_URL;
+    const reqPayload = {
+      query: fieldValues,
+      page: 1
+    }
 
     request
-      .post(apiURL)
-      .send(payload)
+      .post(API_URL)
+      .send(reqPayload)
       .accept('application/json')
       .then(() => {
         console.log('Success searching');
