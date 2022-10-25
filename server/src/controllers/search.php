@@ -35,7 +35,19 @@ class Search {
       curl_close ($ch);
 
       if (!is_null($server_output)) {
-        $response = json_decode($server_output) -> docs;
+        $decoded_server_output = json_decode($server_output);
+        $results = $decoded_server_output -> docs;
+        $formattedResults = array();
+
+        // Formatting results for efficient client usage
+        foreach($results as $item) {
+          $item_id = $item -> id;
+          $formattedResults[$item_id] = $item;
+        }
+
+        $total_pages = $decoded_server_output -> totalPages;
+        $response = array('results' => $formattedResults, 'metaData' => array('totalPages' => $total_pages));
+
         echo json_encode($response);
       } else {
         http_response_code(500);

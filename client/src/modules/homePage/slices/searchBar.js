@@ -1,6 +1,10 @@
 import request from 'superagent';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
+import { updateMetaData, updateSearchResults } from './pageData';
+
 import { fieldNames, SEARCH_API_URL } from '../constants/searchBar';
+
 import getAPIHost from '../../../utils/getAPIHost';
 
 const searchBar = createSlice({
@@ -36,6 +40,8 @@ export const postSearch = createAsyncThunk(
   async (payload, { dispatch, getState }) => {
     const state = getState();
 
+    dispatch(updateMetaData({ isSectionEnabled: true, isSectionLoading: true }));
+
     const fieldValues = selectSearchBarFieldValues(state) || {};
     const API_URL = getAPIHost() + SEARCH_API_URL;
     const reqPayload = {
@@ -47,8 +53,9 @@ export const postSearch = createAsyncThunk(
       .post(API_URL)
       .send(reqPayload)
       .accept('application/json')
-      .then(() => {
-        console.log('Success searching');
+      .then((res) => {
+        dispatch(updateSearchResults(res.body));
+        dispatch(updateMetaData({ isSectionLoading: false }));
       })
       .catch((error) =>
         console.log('---Error searching', error)

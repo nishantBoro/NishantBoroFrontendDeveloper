@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { SearchBarContainer } from '../SearchBar';
+import { SearchResultsContainer } from '../SearchResults';
 
 function Page(props) {
   const {
@@ -11,11 +11,9 @@ function Page(props) {
   return (
     <div>
       <SearchBarContainer />
+      <SearchResultsContainer />
     </div>
   )
 }
-
-Page.propTypes = {
-};
 
 export default Page;
