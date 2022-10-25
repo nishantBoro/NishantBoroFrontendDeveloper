@@ -41,7 +41,7 @@ const Pagination = props => {
       className={className}
     >
       {
-        currentPage === 1 && (
+        currentPage !== 1 && (
           <Button onClick={onPrevious} variant='secondary'>{ PREV_TEXT }</Button>
         )
       }
@@ -56,7 +56,7 @@ const Pagination = props => {
           })} onClick={() => onPageChange({ updatedPageNo: pageNumber })}>{pageNumber}</span>
         );
       })}
-      { currentPage === lastPage && (
+      { currentPage !== lastPage && (
         <Button onClick={onNext} variant='secondary'>{ NEXT_TEXT }</Button>
       )}
     </div>

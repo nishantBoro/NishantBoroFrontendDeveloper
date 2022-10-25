@@ -37,8 +37,10 @@ export const selectSearchBarFieldErrors = (state) => state.homePage.searchBar.fi
 
 export const postSearch = createAsyncThunk(
   'searchBar/postSearch',
-  async (payload, { dispatch, getState }) => {
+  async (payload = {}, { dispatch, getState }) => {
     const state = getState();
+
+    const { pageNo = 1 } = payload;
 
     dispatch(updateMetaData({ isSectionEnabled: true, isSectionLoading: true }));
 
@@ -46,7 +48,7 @@ export const postSearch = createAsyncThunk(
     const API_URL = getAPIHost() + SEARCH_API_URL;
     const reqPayload = {
       query: fieldValues,
-      page: 1
+      page: pageNo
     }
 
     request

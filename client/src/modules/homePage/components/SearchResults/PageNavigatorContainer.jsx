@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { postSearch } from '../../slices/searchBar';
 import { selectSearchResultMetaData, updateMetaData } from '../../slices/pageData';
 
 import { Pagination } from '../../../components-library';
@@ -13,6 +14,7 @@ function PageNavigatorContainer() {
 
   const onPageChange = ({ updatedPageNo }) => {
     dispatch(updateMetaData({ currentPage: updatedPageNo }));
+    dispatch(postSearch({ pageNo: updatedPageNo }));
   }
 
   return (
