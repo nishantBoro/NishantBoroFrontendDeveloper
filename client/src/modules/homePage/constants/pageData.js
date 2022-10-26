@@ -1,6 +1,6 @@
 const pageData = {
   searchBar: {
-    header: 'Search Bar',
+    header: 'Search Form',
     button: 'Search'
   },
   searchResults: {

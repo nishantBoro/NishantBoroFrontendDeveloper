@@ -7,10 +7,13 @@ module.exports = {
     colors: {
       black: '#000000',
       white: {
-        1: '#f5f5f5'
+        1: '#ffffff'
       },
       gray: {
-        1: '#E6E7F1'
+        1: '#E6E7F1',
+        2: '#f3f4f5',
+        3: '#dbdde1',
+        4: '#6c707a'
       },
       blue: {
         1: '#0071c2'
@@ -18,15 +21,22 @@ module.exports = {
     },
     spacing: {
       0: '0px',
-      8: '8px'
+      4: '4px',
+      8: '8px',
+      16: '16px'
     },
     fontSize: {
       14: '14px',
-      16: '16px'
+      16: '16px',
+      20: '20px'
     },
     screens: {
       mobile: { max: '820px' },
       desktop: { min: '821px' }
+    },
+    borderWidth: {
+      0: '0px',
+      1: '1px'
     }
   }
 }

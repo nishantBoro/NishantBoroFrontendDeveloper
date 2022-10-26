@@ -9,7 +9,7 @@ function Page(props) {
   } = props;
   
   return (
-    <div>
+    <div className='bg-gray-2'>
       <SearchBarContainer />
       <SearchResultsContainer />
     </div>

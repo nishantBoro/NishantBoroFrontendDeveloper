@@ -11,13 +11,17 @@ function SearchBoxContainer(props) {
   const dispatch = useDispatch();
   const fieldValue = useSelector(state => selectSearchBarFieldValues(state))[id];
 
+  const handleDropdownClick = ({ value }) => {
+    dispatch(updateField({ id, value }));
+  }
+  
   const handleInputChange = (e) => {
     const value = e.target.value;
 
     dispatch(updateField({ id, value }));
   }
 
-  return <SearchBox id={id} fieldValue={fieldValue} handleInputChange={handleInputChange} />;
+  return <SearchBox id={id} fieldValue={fieldValue} handleInputChange={handleInputChange} handleDropdownClick={handleDropdownClick} />;
 }
 
 export default SearchBoxContainer;

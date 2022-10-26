@@ -1,5 +1,7 @@
 import { Provider } from 'react-redux';
 
+import '../tailwind/tailwind.css';
+
 import { wrapper } from '../redux/store';
 
 function MyApp({ Component, ...pageProps }) {

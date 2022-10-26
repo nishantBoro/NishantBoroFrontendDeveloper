@@ -14,23 +14,23 @@ function SearchBar(props) {
   } = props;
   
   return (
-    <div>
-      <h2>
+    <div className='m-16 bg-white-1 rounded-xl drop-shadow-md'>
+      <h2 className='font-bold text-20 pb-8 p-16'>
         {
           pageData.searchBar.header
         }
       </h2>
-      <div className='p-8 bg-gray-1'>
+      <div className=''>
         <SearchBoxContainer id={fieldNames.type} />
         <SearchBoxContainer id={fieldNames.status} />
-        <SearchBoxContainer id={fieldNames.originalLaunch} />
+        <SearchBoxContainer id={fieldNames.serial} />
       </div>
       <Button onClick={handleSearch}>{ pageData.searchBar.button }</Button>
     </div>
   )
 }
 SearchBar.propTypes = {
-  str: PropTypes.string
+  handleSearch: PropTypes.func
 };
 
 export default SearchBar;

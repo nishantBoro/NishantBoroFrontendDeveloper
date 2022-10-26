@@ -14,12 +14,10 @@ const searchBar = createSlice({
       values: {
         [fieldNames.type]: '',
         [fieldNames.status]: '',
-        [fieldNames.originalLaunch]: ''
+        [fieldNames.serial]: ''
       },
       errors: {
-        [fieldNames.type]: '',
-        [fieldNames.status]: '',
-        [fieldNames.originalLaunch]: ''
+        [fieldNames.serial]: ''
       }
     }
   },
