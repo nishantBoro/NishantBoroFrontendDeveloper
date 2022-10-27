@@ -20,13 +20,13 @@ function SearchBar(props) {
           pageData.searchBar.header
         }
       </h2>
-      <div className=''>
-        <SearchBoxContainer id={fieldNames.type} />
+      <div className='desktop:flex desktop:pb-16 desktop:pr-16'>
+        <SearchBoxContainer id={fieldNames.type} isMandatory={true} />
         <SearchBoxContainer id={fieldNames.status} />
         <SearchBoxContainer id={fieldNames.serial} />
-      </div>
-      <div className='p-16'>
-        <Button className='font-bold w-full' onClick={handleSearch}>{ pageData.searchBar.button }</Button>
+        <div className='p-16 desktop:pb-4 desktop:p-0 desktop:self-end'>
+          <Button className='font-bold w-full' onClick={handleSearch}>{ pageData.searchBar.button }</Button>
+        </div>
       </div>
     </div>
   )

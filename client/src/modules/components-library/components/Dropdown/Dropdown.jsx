@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
@@ -15,9 +15,27 @@ const Dropdown = props => {
     className
   } = props;
   const { text: selectedTextVal, id } = selectedText;
-  const text = capitalizeFirstLetter({ string: selectedTextVal });
+  const text = selectedTextVal !== '' ? capitalizeFirstLetter({ string: selectedTextVal }) : 'Select';
 
   const [isDropDownOpen, setIsDropdownOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    /**
+     * Alert if clicked on outside of element
+     */
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      // Unbind the event listener on clean up
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref]);
 
   const handleDropdownClick = () => {
     setIsDropdownOpen(!isDropDownOpen);
@@ -31,6 +49,7 @@ const Dropdown = props => {
   return (
     <div
       className={classnames('relative', className)}
+      ref={ref}
     >
       <div 
         className={classnames(

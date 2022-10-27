@@ -14,7 +14,7 @@ function SearchResultsContainer() {
     return null;
   }
 
-  return isSectionLoading ? <Loader /> : <SearchResults />;
+  return isSectionLoading ? <div className='w-full h-[300px] flex justify-center items-center'><Loader /></div> : <SearchResults />;
 }
 
 export default SearchResultsContainer;

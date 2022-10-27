@@ -9,7 +9,7 @@ function Page() {
   return (
     <>
       <HeroBanner />
-      <div className='bg-gray-2 pt-24'>
+      <div className='pt-24'>
         <div className='max-w-[1200px] m-auto'>
           <SearchBarContainer />
           <SearchResultsContainer />

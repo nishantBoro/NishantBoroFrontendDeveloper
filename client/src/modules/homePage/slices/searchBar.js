@@ -20,7 +20,9 @@ const searchBar = createSlice({
           id: '',
           text: ''
         },
-        [fieldNames.serial]: ''
+        [fieldNames.serial]: {
+          text: ''
+        }
       },
       errors: {
         [fieldNames.serial]: ''

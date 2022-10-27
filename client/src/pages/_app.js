@@ -8,9 +8,11 @@ function MyApp({ Component, ...pageProps }) {
   const { store, props } = wrapper.useWrappedStore(pageProps);
 
   return (
-    <Provider store={store}>
-      <Component {...props.pageProps} />
-    </Provider>
+    <div className='min-h-[100vh] bg-gray-2'>
+      <Provider store={store}>
+        <Component {...props.pageProps} />
+      </Provider>
+    </div>
   );
 }
 
