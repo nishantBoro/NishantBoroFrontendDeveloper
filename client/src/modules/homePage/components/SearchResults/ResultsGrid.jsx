@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import { fieldNames } from '../../constants/searchBar';
+
 import capitalizeFirstLetter from '../../../../utils/capitalizeFirstLetter';
 
 import styles from './style.module.css';
-import { fieldNames } from '../../constants/searchBar';
 function ResultsGrid(props) {
   const {
     list,
@@ -16,12 +17,12 @@ function ResultsGrid(props) {
     <div className={classnames(styles.resultsGrid,'mt-12 grid')}>
       {
         Object.values(list).map(item => {
-          const { status, type, serial } = item;
+          const { id, status, type, serial } = item;
           const capitializedStatusName = capitalizeFirstLetter({ string: status });
 
           return (
-            <div onClick={handleCardClick} className='bg-white-1 rounded-xl drop-shadow-md'>
-              <div className='flex justify-between font-bold py-12 px-16 bg-blue-2 rounded-t-xl'>
+            <div onClick={handleCardClick.bind(null, { selectedId: id })} className='bg-white-1 rounded-xl drop-shadow-md'>
+              <div className='flex justify-between font-bold py-12 px-16 bg-blue-2 text-gray-2 rounded-t-xl'>
                 <p>{ capitalizeFirstLetter({ string: fieldNames.type }) }</p>
                 <p>{ type }</p>
               </div>

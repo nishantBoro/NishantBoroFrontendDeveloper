@@ -14,7 +14,7 @@ function SearchBar(props) {
   } = props;
   
   return (
-    <div className='m-16 bg-white-1 rounded-xl drop-shadow-md'>
+    <div className='mx-16 bg-white-1 rounded-xl drop-shadow-md'>
       <h2 className='font-bold text-20 pb-8 p-16'>
         {
           pageData.searchBar.header

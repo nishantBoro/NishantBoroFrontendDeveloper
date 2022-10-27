@@ -1,0 +1,57 @@
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.4s ease-in-out;
+  z-index: 6;
+}
+
+.overlayOpen {
+  visibility: unset;
+  background-color: rgb(45,45,50,0.5);
+}
+
+.overlayClose {
+  visibility: hidden;
+  background: transparent;
+}
+
+.content {
+  position: absolute;
+  background-color: white;
+  transition: bottom 0.4s ease-in-out 0s;
+  border-radius: 16px 16px 0px 0px;
+  width: 100%;
+}
+
+.contentOpen {
+  bottom: 0;
+}
+
+.contentClose {
+  bottom: -100%;
+}
+
+@media screen(desktop) {
+  .contentOpen {
+    bottom: auto;
+  }
+
+  .contentClose {
+    bottom: auto;
+  }
+
+  .content {
+    border-radius: 8px;
+    width: auto;
+  }
+
+  .overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+}

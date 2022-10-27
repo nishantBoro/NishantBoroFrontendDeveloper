@@ -8,7 +8,11 @@ const pageData = createSlice({
       metaData: {
         currentPage: 1,
         isSectionEnabled: false,
-        isSectionLoading: true
+        isSectionLoading: true,
+        infoModal: {
+          isOpen: false,
+          selectedId: ''
+        }
       }
     }
   },
@@ -21,6 +25,16 @@ const pageData = createSlice({
     },
     updateMetaData(state, action) {
       Object.assign(state.searchResults.metaData, action.payload);
+    },
+    openInfoModal(state, { payload }) {
+      const { selectedId } = payload;
+
+      state.searchResults.metaData.infoModal.isOpen = true;
+      state.searchResults.metaData.infoModal.selectedId = selectedId;
+    },
+    closeInfoModal(state) {
+      state.searchResults.metaData.infoModal.isOpen = false;
+      state.searchResults.metaData.infoModal.selectedId = '';
     }
   }
 });
@@ -30,6 +44,8 @@ export const selectSearchResultMetaData = (state) => state.homePage.pageData.sea
 
 export const {
   updateSearchResults,
-  updateMetaData
+  updateMetaData,
+  openInfoModal,
+  closeInfoModal
 } = pageData.actions;
 export default pageData.reducer;

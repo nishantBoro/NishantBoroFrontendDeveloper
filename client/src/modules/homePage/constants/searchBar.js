@@ -1,7 +1,11 @@
 export const fieldNames = {
   status: 'status',
   serial: 'serial',
-  type: 'type'
+  type: 'type',
+  reuseCount: 'reuseCount',
+  waterLandings: 'waterLandings',
+  landLandings: 'landLandings',
+  lastUpdate: 'lastUpdate'
 }
 
 export const fieldPlaceholders = {
