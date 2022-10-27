@@ -17,8 +17,8 @@ const searchBar = createSlice({
           text: 'Dragon 1.0'
         },
         [fieldNames.status]: {
-          id: 'active',
-          text: 'Active'
+          id: '',
+          text: ''
         },
         [fieldNames.serial]: ''
       },
@@ -50,8 +50,15 @@ export const postSearch = createAsyncThunk(
 
     const fieldValues = selectSearchBarFieldValues(state) || {};
     const API_URL = getAPIHost() + SEARCH_API_URL;
+
+    let reqFieldValues = {};
+    Object.keys(fieldValues).forEach(key => {
+      const { text } = fieldValues[key];
+
+      reqFieldValues[key] = text;
+    })
     const reqPayload = {
-      query: fieldValues,
+      query: reqFieldValues,
       page: pageNo
     }
 

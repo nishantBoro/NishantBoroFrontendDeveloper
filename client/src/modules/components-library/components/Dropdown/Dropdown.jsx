@@ -3,6 +3,8 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 
+import capitalizeFirstLetter from '../../../../utils/capitalizeFirstLetter';
+
 import DropdownItem from './DropdownItem';
 
 const Dropdown = props => {
@@ -12,7 +14,8 @@ const Dropdown = props => {
     handleItemClick,
     className
   } = props;
-  const { text, id } = selectedText;
+  const { text: selectedTextVal, id } = selectedText;
+  const text = capitalizeFirstLetter({ string: selectedTextVal });
 
   const [isDropDownOpen, setIsDropdownOpen] = useState(false);
 
@@ -57,7 +60,7 @@ const Dropdown = props => {
                 const { text } = items[key];
                 const isSelected = key === id;
 
-                return <DropdownItem id={key} handleItemClick={handleItemSelectClick.bind(null, { key, text })} text={text} isSelected={isSelected} />
+                return <DropdownItem id={key} handleItemClick={handleItemSelectClick.bind(null, { key, text })} text={capitalizeFirstLetter({ string: text })} isSelected={isSelected} />
               })
             }
           </div>

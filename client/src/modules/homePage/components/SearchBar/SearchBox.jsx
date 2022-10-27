@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { dropdownItems, fieldNames, fieldPlaceholders } from '../../constants/searchBar';
 
+import capitalizeFirstLetter from '../../../../utils/capitalizeFirstLetter';
+
 import { Dropdown } from '../../../components-library';
 
 function SearchBox(props) {

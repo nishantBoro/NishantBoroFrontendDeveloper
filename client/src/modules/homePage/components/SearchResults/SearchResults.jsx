@@ -7,8 +7,8 @@ import PageNavigatorContainer from './PageNavigatorContainer';
 
 function SearchResults() {
   return (
-    <div className=''>
-      <span>{ pageData.searchResults.header }</span>
+    <div className='m-16'>
+      <span className='text-20 font-bold'>{ pageData.searchResults.header }</span>
       <ResultsGridContainer />
       <PageNavigatorContainer />
     </div>

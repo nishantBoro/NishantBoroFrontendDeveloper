@@ -1,19 +1,20 @@
 import React from 'react';
-import { Button } from '../../../components-library';
 
+import { HeroBanner } from '../HeroBanner';
 import { SearchBarContainer } from '../SearchBar';
 import { SearchResultsContainer } from '../SearchResults';
 
-function Page(props) {
-  const {
-    
-  } = props;
-  
+function Page() {  
   return (
-    <div className='bg-gray-2'>
-      <SearchBarContainer />
-      <SearchResultsContainer />
-    </div>
+    <>
+      <HeroBanner />
+      <div className='bg-gray-2'>
+        <div className='max-w-[1200px] m-auto'>
+          <SearchBarContainer />
+          <SearchResultsContainer />
+        </div>
+      </div>
+    </>
   )
 }
 

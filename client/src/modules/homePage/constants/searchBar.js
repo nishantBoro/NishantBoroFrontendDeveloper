@@ -15,16 +15,16 @@ export const SEARCH_API_URL = '/api/search';
 export const dropdownItems = {
   [fieldNames.status]: {
     unknown: {
-      text: 'Unknown'
+      text: 'unknown'
     },
     active: {
-      text: 'Active'
+      text: 'active'
     },
     retired: {
-      text: 'Retired'
+      text: 'retired'
     },
     destroyed: {
-      text: 'Destroyed'
+      text: 'destroyed'
     }
   },
   [fieldNames.type]: {

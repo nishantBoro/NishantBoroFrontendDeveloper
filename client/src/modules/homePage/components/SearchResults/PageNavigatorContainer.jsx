@@ -23,6 +23,7 @@ function PageNavigatorContainer() {
       totalPages={totalPages}
       siblingCount={2}
       currentPage={currentPage} 
+      className='py-24'
     />
   )
 }

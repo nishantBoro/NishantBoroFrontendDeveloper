@@ -13,7 +13,8 @@ module.exports = {
         1: '#E6E7F1',
         2: '#f3f4f5',
         3: '#dbdde1',
-        4: '#6c707a'
+        4: '#6c707a',
+        5: '#151414'
       },
       blue: {
         1: '#0071c2',
@@ -26,12 +27,14 @@ module.exports = {
       4: '4px',
       8: '8px',
       12: '12px',
-      16: '16px'
+      16: '16px',
+      24: '24px'
     },
     fontSize: {
       14: '14px',
       16: '16px',
-      20: '20px'
+      20: '20px',
+      40: '40px'
     },
     screens: {
       mobile: { max: '820px' },
