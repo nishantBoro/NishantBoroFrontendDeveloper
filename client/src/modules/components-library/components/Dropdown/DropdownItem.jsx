@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 
 const DropdownItem = props => {
   const {
@@ -12,13 +13,18 @@ const DropdownItem = props => {
 
   return (
     <div
-      className=''
+      className={classnames({
+        'bg-blue-2 text-white-1': isSelected
+      },'border-t-1 border-gray-3 flex justify-between p-12 items-center'
+      )}
       onClick={handleItemClick.bind(null, { value: id })}
     >
       <span>{ text }</span>
       {
         isSelected && (
-          <img src='https://w7.pngwing.com/pngs/80/808/png-transparent-verified-right-tick-ok-blue-icon-thumbnail.png' width='10' height='10' />
+          <span className='bg-blue-2'>
+            <Image src='/images/white_tick.png' layout='fixed' width='18' height='15' />
+          </span>
         )
       }
     </div>

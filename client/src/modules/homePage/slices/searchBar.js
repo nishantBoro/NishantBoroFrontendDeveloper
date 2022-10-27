@@ -12,8 +12,14 @@ const searchBar = createSlice({
   initialState: {
     fields: {
       values: {
-        [fieldNames.type]: '',
-        [fieldNames.status]: '',
+        [fieldNames.type]: {
+          id: 'dragon1',
+          text: 'Dragon 1.0'
+        },
+        [fieldNames.status]: {
+          id: 'active',
+          text: 'Active'
+        },
         [fieldNames.serial]: ''
       },
       errors: {

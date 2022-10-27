@@ -17,19 +17,19 @@ function SearchBox(props) {
 
   switch(id) {
     case fieldNames.serial: {
-      selectedComponent = <input className='text-black placeholder:text-black px-16' value={fieldValue} onChange={handleInputChange} />
+      selectedComponent = <input className='text-black min-h-[47px] placeholder:text-black px-12 py-4 w-full border-1 border-gray-4 rounded-lg text-14' value={fieldValue} onChange={handleInputChange} />
       break;
     }
     case fieldNames.type:
     case fieldNames.status: {
-      selectedComponent = <Dropdown selectedText={fieldValue} items={dropdownItems[id]} handleItemClick={handleDropdownClick} />
+      selectedComponent = <Dropdown className='text-14' selectedText={fieldValue} items={dropdownItems[id]} handleItemClick={handleDropdownClick} />
       break;
     }
   }
   
   return (
-    <div className='py-4 border-b-1 border-gray-3'>
-      <p className='text-gray-4 text-14 px-16'>{ fieldPlaceholders[id] }</p>
+    <div className='py-4 px-16'>
+      <p className='text-gray-4 text-14 pb-4'>{ fieldPlaceholders[id] }</p>
       { selectedComponent }
     </div>
   )

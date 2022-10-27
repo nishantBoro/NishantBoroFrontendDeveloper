@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../../../components-library';
 
 import { SearchBarContainer } from '../SearchBar';
 import { SearchResultsContainer } from '../SearchResults';

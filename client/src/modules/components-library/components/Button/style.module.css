@@ -1,15 +1,17 @@
 .primary {
-  @apply text-blue-1 bg-white-1;
+  @apply bg-blue-3 text-white-1 
 }
 
 .size {
-  @apply text-14;
+  @apply text-14 p-12 rounded-lg;
 
   @media screen(desktop) {
     font-size: 16px;
+    padding: 16px;
+    border-radius: 12px;
   }
 }
 
 .secondary {
-  @apply text-white-1 bg-blue-1;
+  @apply text-blue-1 bg-white-1;
 }

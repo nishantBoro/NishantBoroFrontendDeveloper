@@ -15,34 +15,27 @@ export const SEARCH_API_URL = '/api/search';
 export const dropdownItems = {
   [fieldNames.status]: {
     unknown: {
-      text: 'Unknown',
-      isSelected: false
+      text: 'Unknown'
     },
     active: {
-      text: 'Active',
-      isSelected: true
+      text: 'Active'
     },
     retired: {
-      text: 'Retired',
-      isSelected: false
+      text: 'Retired'
     },
     destroyed: {
-      text: 'Destroyed',
-      isSelected: false
+      text: 'Destroyed'
     }
   },
   [fieldNames.type]: {
     dragon1: {
-      text: "Dragon 1.0",
-      isSelected: true
+      text: "Dragon 1.0"
     },
     dragon11: {
-      text: "Dragon 1.1",
-      isSelected: false
+      text: "Dragon 1.1"
     },
     dragon2: {
-      text: "Dragon 2.0",
-      isSelected: false
+      text: "Dragon 2.0"
     }
   }
 }

@@ -25,7 +25,9 @@ function SearchBar(props) {
         <SearchBoxContainer id={fieldNames.status} />
         <SearchBoxContainer id={fieldNames.serial} />
       </div>
-      <Button onClick={handleSearch}>{ pageData.searchBar.button }</Button>
+      <div className='p-16'>
+        <Button className='font-bold w-full' onClick={handleSearch}>{ pageData.searchBar.button }</Button>
+      </div>
     </div>
   )
 }
