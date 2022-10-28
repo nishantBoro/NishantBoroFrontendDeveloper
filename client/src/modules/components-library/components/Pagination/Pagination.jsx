@@ -52,7 +52,7 @@ function Pagination(props) {
           variant="secondary"
         >
           <div className="rotate-90 transition-transform">
-            <Image src="/images/black_dropdown.png" width="14" height="6" />
+            <Image src="/images/black_dropdown.png" width="14" height="6" alt='SpaceX' />
           </div>
           <p className="pl-4">{PREV_TEXT}</p>
         </Button>
@@ -86,7 +86,7 @@ function Pagination(props) {
         >
           <p className="pr-4">{NEXT_TEXT}</p>
           <div className="-rotate-90 transition-transform">
-            <Image src="/images/black_dropdown.png" width="14" height="6" />
+            <Image src="/images/black_dropdown.png" width="14" height="6" alt='SpaceX' />
           </div>
         </Button>
       )}

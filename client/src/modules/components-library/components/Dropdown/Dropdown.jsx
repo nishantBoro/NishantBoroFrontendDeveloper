@@ -67,6 +67,7 @@ function Dropdown(props) {
             layout="fixed"
             width="18"
             height="10"
+            alt='SpaceX'
           />
         </span>
       </div>

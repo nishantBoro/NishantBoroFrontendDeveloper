@@ -16,13 +16,14 @@ Database:
     PRIMARY KEY (id)
   );`
 - Insert a dummy user data by running insert query. Ex: `
-  insert into`user`(`username`, `password`) values('nishant', 'nishant');
+  insert into user(username, password) values('nishant', 'nishant');
 `
 
 ### Installation
 Server: 
 - `cd server`
-- Add the .env file at root. .env.example contains the sample format
+- Add the .env file at root. .env.example contains the sample format. DB_DATABASE refers to the database
+name that we used while creating the database.
 - `php composer.phar update` at root of server. This will install all dependencies listed
 
 Client:

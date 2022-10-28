@@ -16,7 +16,7 @@ function HeroBanner() {
           </h2>
         </div>
         <div className="py-24 w-1/2">
-          <Image src="/images/heroBanner.png" width="460" height="460" />
+          <Image src="/images/heroBanner.png" width="460" height="460" alt='SpaceX' />
         </div>
       </div>
     </div>

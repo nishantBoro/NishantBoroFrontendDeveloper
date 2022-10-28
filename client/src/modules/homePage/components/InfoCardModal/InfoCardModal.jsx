@@ -36,6 +36,7 @@ function InfoCardModal(props) {
             width="24"
             height="24"
             onClick={handleModalClose}
+            alt='SpaceX'
           />
         </div>
         <InfoCard

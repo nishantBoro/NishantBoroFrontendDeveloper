@@ -24,6 +24,7 @@ function DropdownItem(props) {
             layout="fixed"
             width="18"
             height="15"
+            alt='SpaceX'
           />
         </span>
       )}

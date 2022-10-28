@@ -25,6 +25,7 @@ function LoginModal(props) {
             width="24"
             height="24"
             onClick={handleModalClose}
+            alt='SpaceX'
           />
         </div>
         <div className="py-4 px-16">

@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import pageData from '../../constants/pageData';
 import { fieldNames } from '../../constants/searchBar';
+
+import style from './style.module.css';
 
 import SearchBoxContainer from './SearchBoxContainer';
 
@@ -12,7 +15,7 @@ function SearchBar(props) {
   const { handleSearch, handleReset } = props;
 
   return (
-    <div className="mx-16 bg-white-1 rounded-xl drop-shadow-md">
+    <div className={classNames(style.searchBar, "mx-16 bg-white-1 rounded-xl")}>
       <h2 className="font-bold text-20 pb-8 p-16">
         {pageData.searchBar.header}
       </h2>
