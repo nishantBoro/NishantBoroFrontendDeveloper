@@ -40,3 +40,7 @@ Client:
 
 ### Video
 [Video URL](https://drive.google.com/file/d/1ge2bh43kWiUOEA1_nYNvEj7Vumspf_tc/view?usp=sharing)
+
+### Tech Stack
+- Frontend: React.js, Next.js, Redux, TailwindCSS
+- Backend: PHP, Composer
