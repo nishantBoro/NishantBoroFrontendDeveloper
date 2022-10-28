@@ -19,6 +19,7 @@ function LoginModal(props) {
         <div className="flex items-center justify-between font-bold py-12 px-16 bg-blue-2 text-gray-2 rounded-t-[16px] desktop:rounded-t-[8px]">
           <h1>Login</h1>
           <Image
+            className='desktop:cursor-pointer'
             src="/images/crossIcon.png"
             layout="fixed"
             width="24"
@@ -37,6 +38,7 @@ function LoginModal(props) {
         <div className="py-4 px-16">
           <p className="text-gray-4 text-14 pb-4">Password</p>
           <input
+            type='password'
             className="text-black min-h-[47px] placeholder:text-black px-12 py-4 w-full border-1 border-gray-4 rounded-lg text-14"
             value={values.password}
             onChange={handleInputChange.bind(null, { id: 'password' })}

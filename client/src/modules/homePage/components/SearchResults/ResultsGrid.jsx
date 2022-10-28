@@ -22,7 +22,7 @@ function ResultsGrid(props) {
           <div
             key={id}
             onClick={handleCardClick.bind(null, { selectedId: id })}
-            className="bg-white-1 rounded-xl drop-shadow-md"
+            className="bg-white-1 rounded-xl drop-shadow-md desktop:cursor-pointer"
           >
             <div className="font-bold py-12 px-16 bg-blue-2 text-gray-2 rounded-t-xl">
               <p>{`${capitalizeFirstLetter({ string: fieldNames.type })}:`}</p>

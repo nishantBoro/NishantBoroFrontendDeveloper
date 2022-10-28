@@ -21,7 +21,7 @@ class Login {
 				} else {
 					$row = $databaseInstance -> dbFetchAssoc($result);
 					$username = $row['username'];
-					$payload = array('username' => $username, 'exp' => (time() + 60));
+					$payload = array('username' => $username, 'exp' => (time() + 600));
 					$jwt = JWT::encode($payload, $_ENV['JWT_KEY'], 'HS256');
 					
 					echo json_encode(array('token' => $jwt));

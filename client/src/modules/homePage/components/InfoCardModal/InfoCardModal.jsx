@@ -30,6 +30,7 @@ function InfoCardModal(props) {
             <p>{type}</p>
           </div>
           <Image
+            className='desktop:cursor-pointer'
             src="/images/crossIcon.png"
             layout="fixed"
             width="24"

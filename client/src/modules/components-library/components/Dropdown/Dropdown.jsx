@@ -45,7 +45,7 @@ function Dropdown(props) {
   };
 
   return (
-    <div className={classnames('relative', className)} ref={ref}>
+    <div className={classnames('relative desktop:cursor-pointer', className)} ref={ref}>
       <div
         className={classnames(
           {
