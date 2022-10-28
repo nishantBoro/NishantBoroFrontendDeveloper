@@ -61,7 +61,8 @@ export const postSearch = createAsyncThunk(
     })
     const reqPayload = {
       query: reqFieldValues,
-      page: pageNo
+      page: pageNo,
+      token: localStorage.getItem('jwtToken')
     }
 
     request

@@ -11,6 +11,10 @@ class Search {
     if (!is_null($data)) {
       $page = $data -> page;
       $request_query = $data -> query;
+			$token = $data -> token;
+
+      $authorization = new Authorization();
+      $authorization -> validate($token);
 
       /*
         Note: Filtering out all empty key-value pairs. SpaceX API gives incorrect results if 

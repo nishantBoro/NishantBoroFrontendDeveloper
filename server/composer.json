@@ -3,6 +3,7 @@
     "description": "Backend for spaceX",
     "type": "project",
     "require": {
-        "firebase/php-jwt": "^6.3"
+        "firebase/php-jwt": "^6.3",
+        "vlucas/phpdotenv": "^5.5"
     }
 }
