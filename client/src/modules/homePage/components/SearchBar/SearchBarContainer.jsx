@@ -9,7 +9,9 @@ import SearchBar from './SearchBar';
 function SearchBarContainer() {
   const dispatch = useDispatch();
 
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault();
+    
     if (!localStorage.getItem('jwtToken')) {
       dispatch(toggleLoginModalVisibility());
       return;

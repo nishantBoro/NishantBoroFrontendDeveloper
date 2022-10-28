@@ -15,7 +15,7 @@ function LoginModal(props) {
 
   return (
     <Modal isOpen={isOpen} handleModalClose={handleModalClose}>
-      <div className="bg-white-1 rounded-[16px] desktop:rounded-[8px] drop-shadow-md desktop:min-w-[500px]">
+      <form className="bg-white-1 rounded-[16px] desktop:rounded-[8px] drop-shadow-md desktop:min-w-[500px]">
         <div className="flex items-center justify-between font-bold py-12 px-16 bg-blue-2 text-gray-2 rounded-t-[16px] desktop:rounded-t-[8px]">
           <h1>Login</h1>
           <Image
@@ -45,11 +45,11 @@ function LoginModal(props) {
           />
         </div>
         <div className="p-16">
-          <Button className="font-bold w-full" onClick={handleInitLogin}>
+          <Button onClick={handleInitLogin} className="font-bold w-full">
             Login
           </Button>
         </div>
-      </div>
+      </form>
     </Modal>
   );
 }

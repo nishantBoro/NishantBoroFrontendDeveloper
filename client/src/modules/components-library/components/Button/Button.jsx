@@ -7,7 +7,7 @@ import { variants } from '../../constants/button';
 import styles from './style.module.css';
 
 function Button(props) {
-  const { variant, children, className, onClick } = props;
+  const { variant, children, className, onClick, ...otherProps } = props;
 
   return (
     <button
@@ -20,6 +20,7 @@ function Button(props) {
         className
       )}
       onClick={onClick}
+      {...otherProps}
     >
       {children}
     </button>
