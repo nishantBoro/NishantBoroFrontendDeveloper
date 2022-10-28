@@ -40,7 +40,7 @@ Client:
 - `npm run dev`
 
 ### Video
-[Video URL](https://drive.google.com/file/d/1ge2bh43kWiUOEA1_nYNvEj7Vumspf_tc/view?usp=sharing)
+[Video URL](https://drive.google.com/file/d/1kn-NX8d8jCDq4VUIPX_RtrcfSfpf7UKZ/view?usp=sharing)
 
 ### Tech Stack
 - Frontend: React.js, Next.js, Redux, TailwindCSS
