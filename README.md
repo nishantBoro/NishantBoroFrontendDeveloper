@@ -34,6 +34,7 @@ Client:
 Server:
 - `cd server`
 - `php -S localhost:8080` to run the local server
+
 Client: 
 - `cd client`
 - `npm run dev`
