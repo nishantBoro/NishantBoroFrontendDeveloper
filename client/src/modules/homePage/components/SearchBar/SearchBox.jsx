@@ -46,7 +46,7 @@ function SearchBox(props) {
   }
 
   return (
-    <div className="py-4 px-16 desktop:w-1/3">
+    <div className="py-4 px-16 desktop:w-1/4">
       <p className="text-gray-4 text-14 pb-4">{`${fieldPlaceholders[id]} ${
         isMandatory ? '*' : ''
       }`}</p>
@@ -57,7 +57,7 @@ function SearchBox(props) {
 
 SearchBox.propTypes = {
   id: PropTypes.string,
-  fieldValue: PropTypes.string,
+  fieldValue: PropTypes.object,
   handleSelectClick: PropTypes.func
 };
 

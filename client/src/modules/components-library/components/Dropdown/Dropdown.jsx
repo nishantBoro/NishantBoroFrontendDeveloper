@@ -96,7 +96,7 @@ function Dropdown(props) {
 }
 
 Dropdown.propTypes = {
-  selectedText: PropTypes.string,
+  selectedText: PropTypes.object,
   items: PropTypes.object,
   handleItemClick: PropTypes.func,
   className: PropTypes.string

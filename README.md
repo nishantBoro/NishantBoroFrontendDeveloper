@@ -12,6 +12,19 @@ Client:
 - `cd client`
 - `npm i` to install all dependencies
 
+### Setup
+Database:
+- Install mysql server
+- Inside mysql terminal:
+- Create database: `CREATE DATABASE spacex;`
+- Use Database: `USE spacex;`
+- Run the query: `CREATE TABLE user (
+    id int NOT NULL AUTO_INCREMENT,
+    username varchar(45) DEFAULT NULL,
+    password varchar(255) DEFAULT NULL,
+    PRIMARY KEY (id)
+  );`
+
 ### Run - Dev Mode
 Server:
 - `cd server`

@@ -5,10 +5,12 @@ const pageData = {
   },
   searchBar: {
     header: 'Search Form',
-    button: 'Search'
+    button: 'Search',
+    resetCta: 'Reset'
   },
   searchResults: {
-    header: 'Search Results'
+    header: 'Search Results',
+    noResults: 'No Results Found. Please try with a different combination'
   }
 };
 

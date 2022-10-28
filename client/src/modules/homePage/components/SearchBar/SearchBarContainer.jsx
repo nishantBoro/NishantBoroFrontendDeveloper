@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { postSearch } from '../../slices/searchBar';
+import { postSearch, resetFieldValues } from '../../slices/searchBar';
 import { toggleLoginModalVisibility } from '../../../auth/slices/auth';
 
 import SearchBar from './SearchBar';
@@ -19,7 +19,13 @@ function SearchBarContainer() {
     dispatch(postSearch());
   };
 
-  return <SearchBar handleSearch={handleSearch} />;
+  const handleReset = (e) => {
+    e.preventDefault();
+    
+    dispatch(resetFieldValues());
+  }
+
+  return <SearchBar handleReset={handleReset} handleSearch={handleSearch} />;
 }
 
 export default SearchBarContainer;

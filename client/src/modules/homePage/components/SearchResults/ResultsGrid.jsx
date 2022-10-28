@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import pageData from '../../constants/pageData';
 import { fieldNames } from '../../constants/searchBar';
 
 import capitalizeFirstLetter from '../../../../utils/capitalizeFirstLetter';
@@ -12,6 +13,10 @@ import { InfoCard } from '../InfoCard';
 
 function ResultsGrid(props) {
   const { list, handleCardClick } = props;
+
+  if (!Object.keys(list).length) {
+    return <h2 className='text-16 font-bold pt-16 text-blue-3'>{ pageData.searchResults.noResults }</h2>
+  }
 
   return (
     <div className={classnames(styles.resultsGrid, 'mt-12 grid')}>
@@ -40,5 +45,9 @@ ResultsGrid.propTypes = {
   list: PropTypes.array,
   handleCardClick: PropTypes.func
 };
+
+ResultsGrid.defaultProps = {
+  list: []
+}
 
 export default ResultsGrid;

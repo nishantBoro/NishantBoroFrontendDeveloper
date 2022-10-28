@@ -7,33 +7,38 @@ import { fieldNames, SEARCH_API_URL } from '../constants/searchBar';
 
 import getAPIHost from '../../../utils/getAPIHost';
 
+const initialState = {
+  fields: {
+    values: {
+      [fieldNames.type]: {
+        id: 'dragon1',
+        text: 'Dragon 1.0'
+      },
+      [fieldNames.status]: {
+        id: '',
+        text: ''
+      },
+      [fieldNames.serial]: {
+        text: ''
+      }
+    },
+    errors: {
+      [fieldNames.serial]: ''
+    }
+  }
+}
+
 const searchBar = createSlice({
   name: 'searchBar',
-  initialState: {
-    fields: {
-      values: {
-        [fieldNames.type]: {
-          id: 'dragon1',
-          text: 'Dragon 1.0'
-        },
-        [fieldNames.status]: {
-          id: '',
-          text: ''
-        },
-        [fieldNames.serial]: {
-          text: ''
-        }
-      },
-      errors: {
-        [fieldNames.serial]: ''
-      }
-    }
-  },
+  initialState: initialState,
   reducers: {
     updateField(state, { payload } = {}) {
       const { id, value } = payload;
 
       state.fields.values[id] = value;
+    },
+    resetFieldValues() {
+      return initialState;
     }
   }
 });
@@ -81,5 +86,5 @@ export const postSearch = createAsyncThunk(
   }
 );
 
-export const { updateField } = searchBar.actions;
+export const { updateField, resetFieldValues } = searchBar.actions;
 export default searchBar.reducer;
