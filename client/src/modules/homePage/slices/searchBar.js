@@ -38,8 +38,10 @@ const searchBar = createSlice({
   }
 });
 
-export const selectSearchBarFieldValues = (state) => state.homePage.searchBar.fields.values;
-export const selectSearchBarFieldErrors = (state) => state.homePage.searchBar.fields.errors;
+export const selectSearchBarFieldValues = (state) =>
+  state.homePage.searchBar.fields.values;
+export const selectSearchBarFieldErrors = (state) =>
+  state.homePage.searchBar.fields.errors;
 
 export const postSearch = createAsyncThunk(
   'searchBar/postSearch',
@@ -48,22 +50,24 @@ export const postSearch = createAsyncThunk(
 
     const { pageNo = 1 } = payload;
 
-    dispatch(updateMetaData({ isSectionEnabled: true, isSectionLoading: true }));
+    dispatch(
+      updateMetaData({ isSectionEnabled: true, isSectionLoading: true })
+    );
 
     const fieldValues = selectSearchBarFieldValues(state) || {};
     const API_URL = getAPIHost() + SEARCH_API_URL;
 
-    let reqFieldValues = {};
-    Object.keys(fieldValues).forEach(key => {
+    const reqFieldValues = {};
+    Object.keys(fieldValues).forEach((key) => {
       const { text } = fieldValues[key];
 
       reqFieldValues[key] = text;
-    })
+    });
     const reqPayload = {
       query: reqFieldValues,
       page: pageNo,
       token: localStorage.getItem('jwtToken')
-    }
+    };
 
     request
       .post(API_URL)
@@ -73,13 +77,9 @@ export const postSearch = createAsyncThunk(
         dispatch(updateSearchResults(res.body));
         dispatch(updateMetaData({ isSectionLoading: false }));
       })
-      .catch((error) =>
-        console.log('---Error searching', error)
-      );
+      .catch((error) => console.log('---Error searching', error));
   }
 );
 
-export const {
-  updateField
-} = searchBar.actions;
+export const { updateField } = searchBar.actions;
 export default searchBar.reducer;

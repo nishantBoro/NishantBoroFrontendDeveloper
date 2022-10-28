@@ -39,8 +39,10 @@ const pageData = createSlice({
   }
 });
 
-export const selectSearchResultData = (state) => state.homePage.pageData.searchResults.data;
-export const selectSearchResultMetaData = (state) => state.homePage.pageData.searchResults.metaData;
+export const selectSearchResultData = (state) =>
+  state.homePage.pageData.searchResults.data;
+export const selectSearchResultMetaData = (state) =>
+  state.homePage.pageData.searchResults.metaData;
 
 export const {
   updateSearchResults,

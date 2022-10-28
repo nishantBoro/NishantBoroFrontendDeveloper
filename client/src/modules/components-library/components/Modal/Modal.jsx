@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import styles from './style.module.css';
 
-const Modal = (props) => {
+function Modal(props) {
   const {
     isOpen,
     handleModalClose,
@@ -27,29 +27,33 @@ const Modal = (props) => {
   };
 
   return (
+    <div
+      className={classnames(
+        styles.overlay,
+        {
+          [styles.overlayOpen]: isOpen,
+          [styles.overlayClose]: !isOpen
+        },
+        overlayClassname
+      )}
+      onClick={handleModalClose}
+    >
       <div
         className={classnames(
-          styles.overlay,
+          styles.content,
           {
-            [styles.overlayOpen]: isOpen,
-            [styles.overlayClose]: !isOpen
-          },
-          overlayClassname
-        )}
-        onClick={handleModalClose}
-      >
-        <div
-          className={classnames(styles.content, {
             [styles.contentClose]: !isOpen,
             [styles.contentOpen]: isOpen
-          }, contentClassname)}
-          onClick={handleModalContentClick}
-        >
-          {children}
-        </div>
+          },
+          contentClassname
+        )}
+        onClick={handleModalContentClick}
+      >
+        {children}
       </div>
+    </div>
   );
-};
+}
 
 Modal.defaultProps = {
   isOpen: false

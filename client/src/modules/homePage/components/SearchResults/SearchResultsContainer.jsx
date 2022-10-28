@@ -7,14 +7,21 @@ import { selectSearchResultMetaData } from '../../slices/pageData';
 import SearchResults from './SearchResults';
 
 function SearchResultsContainer() {
-
-  const { isSectionEnabled, isSectionLoading } = useSelector(state => selectSearchResultMetaData(state));
+  const { isSectionEnabled, isSectionLoading } = useSelector((state) =>
+    selectSearchResultMetaData(state)
+  );
 
   if (!isSectionEnabled) {
     return null;
   }
 
-  return isSectionLoading ? <div className='w-full h-[300px] flex justify-center items-center'><Loader /></div> : <SearchResults />;
+  return isSectionLoading ? (
+    <div className="w-full h-[300px] flex justify-center items-center">
+      <Loader />
+    </div>
+  ) : (
+    <SearchResults />
+  );
 }
 
 export default SearchResultsContainer;

@@ -41,7 +41,7 @@ export const initLogin = createAsyncThunk(
     const reqQuery = {
       username,
       password
-    }
+    };
 
     request
       .post(API_URL)
@@ -50,20 +50,21 @@ export const initLogin = createAsyncThunk(
       .then((res) => {
         const { token } = res.body;
 
-        localStorage.setItem('jwtToken', token)
+        localStorage.setItem('jwtToken', token);
         dispatch(toggleLoginModalVisibility());
-        alert('Successfull login!. You can now proceed to searching for rockets!');
+        alert(
+          'Successfull login!. You can now proceed to searching for rockets!'
+        );
       })
       .catch((error) => {
         dispatch(toggleLoginModalVisibility());
-        alert('There was an error while trying to log you in. Please try again later!');
+        alert(
+          'There was an error while trying to log you in. Please try again later!'
+        );
         console.log('---Error Loggin IN user', error);
       });
   }
 );
 
-export const {
-  updateField,
-  toggleLoginModalVisibility
-} = auth.actions;
+export const { updateField, toggleLoginModalVisibility } = auth.actions;
 export default auth.reducer;

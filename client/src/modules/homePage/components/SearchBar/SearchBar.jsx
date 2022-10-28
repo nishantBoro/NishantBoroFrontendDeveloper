@@ -9,27 +9,25 @@ import SearchBoxContainer from './SearchBoxContainer';
 import { Button } from '../../../components-library';
 
 function SearchBar(props) {
-  const {
-    handleSearch
-  } = props;
-  
+  const { handleSearch } = props;
+
   return (
-    <div className='mx-16 bg-white-1 rounded-xl drop-shadow-md'>
-      <h2 className='font-bold text-20 pb-8 p-16'>
-        {
-          pageData.searchBar.header
-        }
+    <div className="mx-16 bg-white-1 rounded-xl drop-shadow-md">
+      <h2 className="font-bold text-20 pb-8 p-16">
+        {pageData.searchBar.header}
       </h2>
-      <div className='desktop:flex desktop:pb-16 desktop:pr-16'>
-        <SearchBoxContainer id={fieldNames.type} isMandatory={true} />
+      <div className="desktop:flex desktop:pb-16 desktop:pr-16">
+        <SearchBoxContainer id={fieldNames.type} isMandatory />
         <SearchBoxContainer id={fieldNames.status} />
         <SearchBoxContainer id={fieldNames.serial} />
-        <div className='p-16 desktop:pb-4 desktop:p-0 desktop:self-end'>
-          <Button className='font-bold w-full' onClick={handleSearch}>{ pageData.searchBar.button }</Button>
+        <div className="p-16 desktop:pb-4 desktop:p-0 desktop:self-end">
+          <Button className="font-bold w-full" onClick={handleSearch}>
+            {pageData.searchBar.button}
+          </Button>
         </div>
       </div>
     </div>
-  )
+  );
 }
 SearchBar.propTypes = {
   handleSearch: PropTypes.func

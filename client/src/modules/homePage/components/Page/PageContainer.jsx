@@ -3,9 +3,7 @@ import React from 'react';
 import Page from './Page';
 
 function PageContainer() {
-  const props = {
-    
-  };
+  const props = {};
 
   return <Page {...props} />;
 }

@@ -7,19 +7,17 @@ const reducer = (state, action) => {
   if (action.type === HYDRATE) {
     const nextState = {
       ...state, // use previous state
-      ...action.payload, // apply delta from hydration
-    }
+      ...action.payload // apply delta from hydration
+    };
     return nextState;
-  } else {
-    return reducers(state, action);
   }
-}
+  return reducers(state, action);
+};
 
-const initStore = () => {
-  return configureStore({
+const initStore = () =>
+  configureStore({
     reducer,
     devTools: process.env.NODE_ENV !== 'production'
   });
-}
 
 export const wrapper = createWrapper(initStore);

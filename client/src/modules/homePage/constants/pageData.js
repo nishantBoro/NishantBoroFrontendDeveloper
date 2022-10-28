@@ -1,7 +1,7 @@
 const pageData = {
   heroBanner: {
-    header: "Welcome to Space X",
-    subtitle: "Leaders in Space"
+    header: 'Welcome to Space X',
+    subtitle: 'Leaders in Space'
   },
   searchBar: {
     header: 'Search Form',
@@ -10,6 +10,6 @@ const pageData = {
   searchResults: {
     header: 'Search Results'
   }
-}
+};
 
 export default pageData;

@@ -7,7 +7,6 @@ import { toggleLoginModalVisibility } from '../../../auth/slices/auth';
 import SearchBar from './SearchBar';
 
 function SearchBarContainer() {
-
   const dispatch = useDispatch();
 
   const handleSearch = () => {
@@ -16,7 +15,7 @@ function SearchBarContainer() {
       return;
     }
     dispatch(postSearch());
-  }
+  };
 
   return <SearchBar handleSearch={handleSearch} />;
 }
