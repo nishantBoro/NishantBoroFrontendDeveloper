@@ -19,3 +19,6 @@ Server:
 Client: 
 - `cd client`
 - `npm run dev`
+
+### Video
+[Video URL](https://drive.google.com/file/d/1ge2bh43kWiUOEA1_nYNvEj7Vumspf_tc/view?usp=sharing)
